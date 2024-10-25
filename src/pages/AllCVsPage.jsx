@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import CVList from "../components/CVList";
 import SearchAndFilter from "../components/SearchAndFilter";
+import Button from "../components/Button"; 
 
 export default function AllCVsPage() {
   const [cvs, setCvs] = useState([]);
@@ -43,8 +44,10 @@ export default function AllCVsPage() {
   return (
     <div className="all-cvs-page">
       <SearchAndFilter onSearch={handleSearch} />
-      <button onClick={clearAllCVs}>Clear All CVs</button>
-      <button onClick={() => navigate("/")}>Go to Home</button> 
+      <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
+        <Button onClick={clearAllCVs}>Clear All CVs</Button>
+        <Button onClick={() => navigate("/")}>Go to Home</Button> 
+      </div>
       <CVList cvs={filteredCvs} setCvs={setCvs} handleDelete={handleDelete} /> 
     </div>
   );

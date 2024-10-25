@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import Button from "../components/Button"; 
 export default function ResumePreview() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,8 +14,8 @@ export default function ResumePreview() {
           <strong>{key}: </strong> {state[key]}
         </div>
       ))}
-      <button onClick={() => navigate("/")}>Go to Home</button>
-      <button onClick={() => navigate("/all-cvs")}>View All CVs</button>
+      <Button onClick={() => navigate("/")}>Go to Home</Button>
+      <Button onClick={() => navigate("/all-cvs")}>View All CVs</Button>
     </div>
   );
 }

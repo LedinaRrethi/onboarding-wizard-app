@@ -1,48 +1,32 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #e0f7fa;
+}
+
+.cv-form,
+.add-cv-page,
+.all-cvs-page,
+.resume-preview,
+.home-page {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
 }
 
 h1,
 h2 {
-    color: #0056b3;
     text-align: center;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 16px;
-    margin: 10px 0;
-    width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-}
-
-button:hover {
-    background-color: #0056b3;
+    color: #007bff;
 }
 
 .form-step {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 20px auto;
+    margin-bottom: 20px;
 }
 
 .form-group {
@@ -52,41 +36,65 @@ button:hover {
 label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
-    text-align: center;
-    
 }
 
 input[type="text"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #007bff;
     border-radius: 5px;
-    text-align: center;
 }
 
 input[type="text"]:focus {
-    border-color: #007bff;
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-
+    border-color: #0056b3;
 }
 
 .nav-buttons {
     display: flex;
     justify-content: space-between;
+}
+
+.cv-list {
     margin-top: 20px;
 }
 
-.nav-buttons button {
-    width: 48%;
+.cv-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
-.resume-preview {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 20px auto;
+.custom-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+
+}
+
+.delete-button {
+    background-color: #dc3545;
+
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+   
+}
+
+.search-filter {
+    margin-bottom: 20px;
+    text-align: center;
 }

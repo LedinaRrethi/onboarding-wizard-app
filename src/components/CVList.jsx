@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/Button"; 
 
 export default function CVList({ cvs, setCvs, handleDelete }) { 
   const navigate = useNavigate();
@@ -9,10 +10,12 @@ export default function CVList({ cvs, setCvs, handleDelete }) {
       {cvs.map((cv, index) => (
         <div key={index} className="cv-item">
           <h3>{cv.name}</h3>
-          <button onClick={() => navigate(`/edit-cv/${index}`, { state: cv })}>
+          <Button onClick={() => navigate(`/edit-cv/${index}`, { state: cv })}>
             View
-          </button>
-          <button onClick={() => handleDelete(index)}>Delete</button> 
+          </Button>
+          <Button onClick={() => handleDelete(index)} className="delete-button"> 
+            Delete
+          </Button>
         </div>
       ))}
     </div>
