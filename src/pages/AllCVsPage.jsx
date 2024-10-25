@@ -3,17 +3,18 @@ import { useNavigate } from "react-router-dom";
 import CVList from "../components/CVList";
 import SearchAndFilter from "../components/SearchAndFilter";
 import Button from "../components/Button"; 
+import { getCVsFromLocalStorage } from "../utils/localStorage";
 
 export default function AllCVsPage() {
   const [cvs, setCvs] = useState([]);
   const [filteredCvs, setFilteredCvs] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const storedCvs = JSON.parse(localStorage.getItem("cvs")) || [];
+    const storedCvs = getCVsFromLocalStorage();
     setCvs(storedCvs);
     setFilteredCvs(storedCvs);
-  }, []);
+  }, [navigate]); 
 
   const handleSearch = (query) => {
     const filtered = cvs.filter((cv) =>
@@ -48,7 +49,7 @@ export default function AllCVsPage() {
         <Button onClick={clearAllCVs}>Clear All CVs</Button>
         <Button onClick={() => navigate("/")}>Go to Home</Button> 
       </div>
-      <CVList cvs={filteredCvs} setCvs={setCvs} handleDelete={handleDelete} /> 
+      <CVList cvs={filteredCvs} handleDelete={handleDelete} /> 
     </div>
   );
 }
