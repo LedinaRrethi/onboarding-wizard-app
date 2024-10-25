@@ -18,7 +18,7 @@ export default function AllCVsPage() {
 
   const handleSearch = (query) => {
     const filtered = cvs.filter((cv) =>
-      cv.name.includes(query)
+      cv.name.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredCvs(filtered);
   };
